@@ -1,8 +1,10 @@
-import { useQuiz } from "../contexts/QuizContext";
-
-export default function Progress() {
-  const { numQuestions, index, answer, points, maxPossiblePoints } = useQuiz();
-
+export default function Progress({
+  index,
+  numQuestions,
+  answer,
+  maxPossiblePoints,
+  points,
+}) {
   return (
     <header>
       <progress max={numQuestions} value={index + Number(answer !== null)} />
